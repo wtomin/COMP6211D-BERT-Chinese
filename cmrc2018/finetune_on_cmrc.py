@@ -329,7 +329,8 @@ def convert_examples_to_features(examples, tokenizer, max_seq_length,
                     logger.info("end_position: %d" % (end_position))
                     logger.info(
                         "answer: %s" % (answer_text))
-
+            else:
+                print("loading examples to features :{}/{}".format(example_index,len(examples) ), end='\r')
             features.append(
                 InputFeatures(
                     unique_id=unique_id,
